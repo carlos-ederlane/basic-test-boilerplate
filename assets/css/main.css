@@ -915,7 +915,7 @@ header {
     top: 124px;
     left: 0;
     width: 100%;
-    height: calc(100% - $headerHeight);
+    height: calc(100% - 124px);
     z-index: 3; }
     .banner-content h2 {
       color: #ffffff;
