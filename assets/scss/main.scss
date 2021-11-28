@@ -1,0 +1,138 @@
+//Bootstrap
+@import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap-grid.min.css');
+
+//Utils
+@import "colors";
+@import "fonts";
+@import "variables";
+@import "helpers";
+
+html, body, main{
+    display: block;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: $lightGrey;
+}
+html *{
+    box-sizing: border-box;
+}
+.container{
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+a{
+    text-decoration: none;
+}
+p{
+    margin: 0 0 8px;
+    color: $black;
+    
+    @media #{$medium-and-down}{
+        font-size: 12px;
+        line-height: 129%;
+    }
+}
+span{
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-style: inherit;
+}
+
+b{
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    font-style: inherit;
+    color: inherit;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    font-weight: 700;
+}
+h3{
+    font-size: 42px;
+    line-height: 107%;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+    @media #{$medium-and-down}{
+        font-size: 20px;
+        line-height: 127%;
+        letter-spacing: -0.01em;
+    }
+}
+
+
+.btn{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: auto;
+    max-width: 100%;
+    background-color: $primary;
+    color: $black;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: ease .3s;
+
+    &:hover{
+        background-color: $terciary;
+    }
+    
+    &-totop{
+        background-color: transparent;
+        color: $primary;
+        border: 2px solid $primary;
+        width: 100%;
+        
+        svg{
+          width: 18px;
+          margin-right: 10px;
+          transform: translateY(3px);
+        }
+        
+        &-seta{
+            stroke: $primary;
+            transition: ease .3s;
+            width: 22px;
+        }
+        
+        &:hover{
+            background-color: $primary;
+            color: $white;
+            
+            & .btn-totop-seta{
+                stroke: $white;
+            }
+        }
+    }
+    
+    @media #{$medium-and-down}{
+        padding: 13px 30px 14px;
+        font-weight: 700;
+        font-size: 12px;
+        
+        svg{
+            width: 14px;
+            transform: translateY(2px);
+        }
+    }
+}
+
+//Components
+@import "components/header";
+@import "components/footer";
+@import "components/banner";
+@import "components/filters";
+@import "components/results";

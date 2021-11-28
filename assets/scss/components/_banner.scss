@@ -1,0 +1,129 @@
+.banner{
+    position: relative;
+    height: 500px;
+    background-color: $terciary;
+    z-index: 0;
+    
+    @media #{$medium-and-down}{
+        height: 100vh;
+        background-image: url(/assets/images/hero/mobile/mobile-plantperson.png);
+        background-repeat: no-repeat;
+        background-position: 50% 92%;
+        background-size: 60%;
+    }
+    @media #{$small-and-down}{
+        background-size: 70%;
+    }
+    @media #{$mega-small-and-down}{
+        background-size: 80%;
+    }
+    
+    &-elements{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        z-index: 2;
+        
+        & .plants{
+            @mixin plants{
+                position: absolute;
+                display: block;
+                bottom: 0;
+                height: 100%;
+                width: auto;
+                z-index: 2;
+                object-fit: cover;
+                @media #{$medium-and-down}{
+                    display: none;
+                }
+            }
+            &-left{
+                @include plants;
+                right: 49vw;
+                 object-position: left bottom;
+            }
+            &-right{
+                @include plants;
+                left: 79vw;
+                object-position: right bottom;
+            }
+            
+            &-mobile{
+                display: none;
+                
+                @media #{$medium-and-down}{
+                    position: absolute;
+                    display: block;
+                    top: -65vh;
+                    width: 100%;
+                    height: auto;
+                    z-index: 2;
+                    object-fit: cover;
+                    
+                }
+                @media #{$small-and-down}{
+                    top: -50vh;
+                }
+                @media #{$mega-small-and-down}{
+                    top: -5vh;
+                }
+            }
+        }
+        
+        & .person{
+            position: absolute;
+            bottom: 36px;
+            right: 20vw;
+            height: 428px;
+            width: auto;
+            
+            @media #{$extra-large-and-up}{
+                right: 25vw;
+            }
+            @media #{$medium-and-down}{
+                display: none;
+            }
+        }
+    }
+    
+    &-content{
+        position: absolute;
+        top: $headerHeight;
+        left: 0;
+        width: 100%;
+        height: calc(100% - $headerHeight);
+        z-index: 3;
+            
+        h2{
+            color: $white;
+            font-weight: bold;
+            font-size: 70px;
+            line-height: 85px;
+            
+            @media #{$medium-and-down}{
+                font-size: 40px;
+                line-height: 49px;
+                
+            }
+            
+        }
+        
+        .scrolldown{
+            display: inline-block;
+            margin-top: 31px;
+            img{
+                display: block;
+                height: 39px;
+                width: auto;
+            }
+            
+            @media #{$medium-and-down}{
+                margin-top: 16px;
+            }
+        }
+    }
+}
+

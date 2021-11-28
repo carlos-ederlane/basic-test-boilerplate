@@ -4,14 +4,168 @@
     <title>Front End Test - Greenthumb</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./index.scss" />
+    
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
 
   <body>
-    <img src="images/icons/logo-white.svg" alt="Greenthumb" />
+    
+    <header>
+        <div class="container">
+            <img src="/assets/images/icons/logo-white.svg" class="logo" alt="Logo">
+        </div>
+    </header>
+    
+    <main>
+        
+        <section id="banner-section">
+            <div class="banner">
+                <div class="banner-elements">
+                    <img class="plants-left" src="/assets/images/hero/desktop/left-leaves.png" alt="Plants left">
+                    <img class="plants-right" src="/assets/images/hero/desktop/right-leaves.png" alt="Plants right">
+                    <img class="plants-mobile" src="/assets/images/hero/mobile/mobile-leaves.png" alt="Plants mobile">
+                    <img class="person" src="/assets/images/hero/desktop/plantperson.png" alt="Plants person">
+                </div>
+                <div class="banner-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 col-xl-5">
+                                <h2>
+                                    Find your next green friend
+                                </h2>
+                                
+                                <a  class="scrolldown" href="#filters-section"><img src="/assets/images/icons/arrow-down.svg" alt="Arrow Down"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section id="filters-section" class="bg-white">
+            <div class="container">
+                <div class="row p-t-50 p-b-50">
+                    <div class="col-12 col-lg-4">
+                        <div class="filter">
+                            <img src="/assets/images/illustrations/sun.png" alt="Sun" class="filter-icon">
+                            <p><b>1.</b> Set the amount of <b>sunlight</b> your plant will get.</p>
+                            <select name="sun" class="form-control filter-select" id="sun">
+                                <option value="" selected disabled>Select..</option>
+                                <option value="no">No</option>
+                                <option value="low">Low</option>
+                                <option value="high">High</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="filter">
+                            <img src="/assets/images/illustrations/wateringcan.png" alt="Water" class="filter-icon">
+                            <p><b>2.</b> How often do you want to <b>water</b> your plant?</p>
+                            <select name="water" class="form-control filter-select" id="water">
+                                <option value="" selected disabled>Select..</option>
+                                <option value="regularly">Regularly</option>
+                                <option value="daily">Daily</option>
+                                <option value="rarely">Rarely</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="filter">
+                            <img src="/assets/images/illustrations/dog.png" alt="Dog" class="filter-icon">
+                            <p><b>3.</b> Do you have pets? Do they <b>chew</b> plants? </p>
+                            <select name="pets" class="form-control filter-select" id="pets">
+                                <option value="" selected disabled>Select..</option>
+                                <option value="true">Yes and they chew</option>
+                                <option value="false">No or they don't chew</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="result-section">
+           
+           <div class="results hide" id="results">
+               
+               <div class="container">
+                   
+                   <div class="row">
+                       <div class="col-12">
+                           <img src="/assets/images/illustrations/pick.png" alt="Pick" class="results-title-img">
+                           <h3 class="results-title">Our picks for you</h3>
+                       </div>
+                   </div>
+                   
+                   <div class="row">
+                        <div class="col-12">
+                           
+                            <!--Products-->
+                            <div id="results-list" class="results-list"></div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            
+                            <a href="#banner-section" class="btn btn-totop m-t-20">
+                                <svg viewBox="0 0 18 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <title>seta</title>
+                                <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="d.-results" transform="translate(-622.000000, -1901.000000)" class="btn-totop-seta" stroke-width="0.799999952">
+                                <g id="back-to-the-top" transform="translate(270.000000, 1888.000000)">
+                                <path d="M358.64305,33 L350.000253,24.5 L358.64305,16 M350,24.5 L372,24.5" id="seta" transform="translate(361.000000, 24.500000) rotate(90.000000) translate(-361.000000, -24.500000) "></path>
+                                </g>
+                                </g>
+                                </g>
+                                </svg>
+                                back to the top
+                           </a>
+                            
+                        </div>
+                    </div>
+                   
+               </div>
+               
+           </div>
+           
+            
+            <div id="empty" class="empty">
+                
+                <div class="container">
+                    <div class="row m-b-0">
+                        <div class="col-12 col-md-6 col-lg-5">
+                            <h3>No results yet…</h3>
+                            <p>Use the filters above to find the plant that best fits your environment :)  </p>
+                        </div>
+                        <div class="col-12 col-md-5 offset-md-1 col-lg-5 offset-lg-2">
+                            <img src="/assets/images/illustrations/no-results.png" alt="no results">
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </section>
+        
+    </main>
+    
+    <!--<footer></footer>-->
+    
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <!--Main Script-->
+    <script src="assets/js/main.js" type="application/javascript"></script>
+    
   </body>
 </html>

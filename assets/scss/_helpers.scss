@@ -1,0 +1,194 @@
+html{
+    
+    scroll-behavior: smooth;
+    
+    /* width */
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: $grey;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $terciary;
+        border-radius: 20px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $terciary;
+    }
+    
+}
+
+
+
+
+/*Typografia*/
+
+.light{
+    font-weight: 300;
+}
+.bold, b{
+    font-weight: 700;
+}
+.bolder{
+    font-weight: 800;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+.txt{
+    &-right{
+        text-align: right;
+    }
+    &-left{
+        text-align: left;
+    }
+    &-center{
+        text-align: center;
+    }
+}
+
+
+/*Spacing*/
+
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 60, 70, 75, 80, 85, 90, 100, 125, 150, 200); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+  
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+@each $space in $spaceamounts{
+    .padding-space-#{$space}{
+        height: #{$space}px;
+    }
+}
+
+.no-margin{
+    margin: 0;
+}
+.no-padding{
+    padding: 0;
+}
+
+@media #{$medium-and-down}{
+    .no-margin-mobile{
+        margin: 0 !important;
+    }
+    .no-padding-mobile{
+        padding: 0 !important;
+    }
+    .ignore-mobile-margin{
+        margin-left: -50px !important;
+        margin-right: -50px !important;
+        
+        &-left{
+            margin-left: -50px !important;
+        }
+        &-right{
+            margin-right: -50px !important;
+        }
+    }
+}
+
+/*General*/
+.content-box{
+    padding: 20px 60px 20px 83px;
+    
+    @media #{$medium-and-down}{
+        padding: 40px 40px 80px 40px;
+    }
+}
+
+
+.hide{
+    display: none !important;
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+
+/*Media*/
+.responsive-img{
+    display: block;
+    max-width: 100%;
+}
+.fullwidth-img{
+    width: 100%;
+}
+
+
+/*Floats*/
+.f-left{
+    float: left;
+}
+.f-right{
+    float: right;
+}
+
+/*Displays*/
+.d-flex{
+    display: flex;
+}
+
+/*Positions*/
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+/*Grid specials*/
+@media #{$medium-and-down}{
+    .col-with-grow-mobile{
+        max-width: unset;
+        flex-grow: 1;
+    }
+    .row-reverse-mobile{
+        flex-flow: row-reverse;
+    }
+    .col-reverse-mobile{
+        flex-flow: column-reverse;
+    }
+}
+/*Responsive*/
+
+@media #{$large-and-up}{
+    .hide-on-large-and-up{
+        display: none !important;
+    }
+}
+@media #{$medium-and-down}{
+    .hide-on-med-and-down{
+        display: none !important;
+    }
+}
+@media #{$large-and-down}{
+    .hide-on-large-and-down{
+        display: none !important;
+    }
+}
+
+/*Mixins*/
+@mixin pseudo($content: '', $position: absolute, $display: block){
+    content: $content;
+    position: $position;
+    display: $display;
+    
+}
